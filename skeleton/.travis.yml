@@ -1,0 +1,25 @@
+language: php
+
+sudo: false
+
+notifications:
+    email:
+        on_success: never
+        on_failure: always
+
+matrix:
+  include:
+    - php: 7.0
+      env: LARAVEL_VERSION=5.5.*
+    - php: 7.1
+      env: LARAVEL_VERSION=5.5.*
+
+before_install:
+  - travis_retry composer self-update --stable -n
+  - composer require "laravel/framework:${LARAVEL_VERSION}" --no-update -n
+
+install:
+  - travis_retry composer install --no-suggest --prefer-dist -n -o
+
+script:
+  - composer run phpunit
