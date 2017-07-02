@@ -2,8 +2,8 @@
 
 namespace Melihovv\LaravelPackageGenerator\Commands\Traits;
 
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\File;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Melihovv\LaravelPackageGenerator\Exceptions\RuntimeException;
 
 trait ChangesComposerJson
@@ -23,11 +23,11 @@ trait ChangesComposerJson
 
         $composerJson = $this->loadComposerJson();
 
-        if (!isset($composerJson['autoload'])) {
+        if (! isset($composerJson['autoload'])) {
             $composerJson['autoload'] = [];
         }
 
-        if (!isset($composerJson['autoload']['psr-4'])) {
+        if (! isset($composerJson['autoload']['psr-4'])) {
             $composerJson['autoload']['psr-4'] = [];
         }
 
@@ -59,7 +59,7 @@ trait ChangesComposerJson
 
         $composerJson = $this->loadComposerJson();
 
-        if (!isset($composerJson['autoload'], $composerJson['autoload']['psr-4'])) {
+        if (! isset($composerJson['autoload'], $composerJson['autoload']['psr-4'])) {
             $this->info('Auto loading is not configured in composer.json. Skipping.');
 
             return;
@@ -84,14 +84,14 @@ trait ChangesComposerJson
     {
         $composerJsonPath = $this->getComposerJsonPath();
 
-        if (!File::exists($composerJsonPath)) {
+        if (! File::exists($composerJsonPath)) {
             throw new FileNotFoundException('composer.json does not exist');
         }
 
         $composerJsonContent = File::get($composerJsonPath);
         $composerJson = json_decode($composerJsonContent, true);
 
-        if (!is_array($composerJson)) {
+        if (! is_array($composerJson)) {
             throw new RuntimeException(
                 "Invalid composer.json file [$composerJsonPath]"
             );

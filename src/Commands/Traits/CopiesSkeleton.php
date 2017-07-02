@@ -3,8 +3,8 @@
 namespace Melihovv\LaravelPackageGenerator\Commands\Traits;
 
 use Exception;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 use Illuminate\View\Engines\PhpEngine;
 use Melihovv\LaravelPackageGenerator\Exceptions\RuntimeException;
 
@@ -12,7 +12,7 @@ trait CopiesSkeleton
 {
     use InteractsWithUser;
 
-    protected $packageBaseDir = __DIR__ . '/../../..';
+    protected $packageBaseDir = __DIR__.'/../../..';
 
     /**
      * Copy skeleton to package folder.
@@ -35,7 +35,7 @@ trait CopiesSkeleton
         $this->info('Copy skeleton.');
 
         $skeletonDirPath = $this->getPathFromConfig(
-            'skeleton_dir_path', $this->packageBaseDir . '/skeleton'
+            'skeleton_dir_path', $this->packageBaseDir.'/skeleton'
         );
 
         foreach (File::allFiles($skeletonDirPath, true) as $filePath) {
@@ -67,10 +67,10 @@ trait CopiesSkeleton
      */
     protected function copyStubs($packagePath, $package, $packageFolderName)
     {
-        $facadeFilePath = $this->packageBaseDir . '/stubs/Facade.php.tpl';
-        $mainClassFilePath = $this->packageBaseDir . '/stubs/MainClass.php.tpl';
-        $mainClassTestFilePath = $this->packageBaseDir . '/stubs/MainClassTest.php.tpl';
-        $configFilePath = $this->packageBaseDir . '/stubs/config.php';
+        $facadeFilePath = $this->packageBaseDir.'/stubs/Facade.php.tpl';
+        $mainClassFilePath = $this->packageBaseDir.'/stubs/MainClass.php.tpl';
+        $mainClassTestFilePath = $this->packageBaseDir.'/stubs/MainClassTest.php.tpl';
+        $configFilePath = $this->packageBaseDir.'/stubs/config.php';
 
         $filePaths = [
             $facadeFilePath => "$packagePath/src/Facades/$package.php.tpl",
@@ -97,7 +97,7 @@ trait CopiesSkeleton
         foreach (File::allFiles($packagePath, true) as $filePath) {
             $filePath = realpath($filePath);
 
-            if (!Str::endsWith($filePath, '.tpl')) {
+            if (! Str::endsWith($filePath, '.tpl')) {
                 continue;
             }
 
@@ -128,11 +128,11 @@ trait CopiesSkeleton
     {
         $dirPathOfDestFile = dirname($dest);
 
-        if (!File::exists($dirPathOfDestFile)) {
+        if (! File::exists($dirPathOfDestFile)) {
             File::makeDirectory($dirPathOfDestFile, 0755, true);
         }
 
-        if (!File::exists($dest)) {
+        if (! File::exists($dest)) {
             File::copy($src, $dest);
         }
     }
@@ -234,6 +234,6 @@ trait CopiesSkeleton
             return "\"$keyword\"";
         }, $keywords);
 
-        return implode(",\n" . str_repeat(' ', 4), $keywords);
+        return implode(",\n".str_repeat(' ', 4), $keywords);
     }
 }

@@ -4,8 +4,8 @@ namespace Melihovv\LaravelPackageGenerator\Commands;
 
 use Exception;
 use Illuminate\Console\Command;
-use Melihovv\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\CopiesSkeleton;
+use Melihovv\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\ManipulatesPackageFolder;
 

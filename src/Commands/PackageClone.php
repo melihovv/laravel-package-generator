@@ -3,12 +3,12 @@
 namespace Melihovv\LaravelPackageGenerator\Commands;
 
 use Exception;
-use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Melihovv\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
-use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
+use Illuminate\Console\Command;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithGit;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithUser;
+use Melihovv\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
+use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
 
 class PackageClone extends Command
 {
