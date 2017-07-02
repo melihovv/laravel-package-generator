@@ -2,13 +2,13 @@
 
 namespace Melihovv\LaravelPackageGenerator;
 
-use Melihovv\LaravelPackageGenerator\Commands\PackageClone;
 use Melihovv\LaravelPackageGenerator\Commands\PackageNew;
+use Melihovv\LaravelPackageGenerator\Commands\PackageClone;
 use Melihovv\LaravelPackageGenerator\Commands\PackageRemove;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/laravel-package-generator.php';
+    const CONFIG_PATH = __DIR__.'/../config/laravel-package-generator.php';
 
     public function boot()
     {
