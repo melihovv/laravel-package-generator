@@ -91,7 +91,12 @@ class PackageClone extends Command
         if (Str::contains($url, '@')) {
             $vendorAndPackage = explode(':', $url);
 
-            return explode('/', $vendorAndPackage[1]);
+            $vendorAndPackage = explode('/', $vendorAndPackage[1]);
+
+            return [
+                $vendorAndPackage[0],
+                Str::replaceLast('.git', '', $vendorAndPackage[1]),
+            ];
         }
 
         $urlParts = explode('/', $url);
