@@ -46,7 +46,7 @@ your custom skeleton path in config)
 
 I recommend to run this command with interactive `-i` flag:
 ```
-php artisan package:new Melihovv SomeAwesomePackage
+php artisan package:new Melihovv SomeAwesomePackage -i
 ```
 
 This way you will be prompted for every needed value.
