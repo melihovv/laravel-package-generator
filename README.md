@@ -115,6 +115,7 @@ Available variables to use in templates:
 * Service provider and alias registration (if you use laravel <5.5)
 * In README.md:
   * StyleCI repository identifier
+  * Sensio Insight repository identifier
   * Package description
   * Usage section
 

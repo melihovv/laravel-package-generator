@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>.svg?branch=master)](https://travis-ci.org/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
 [![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/CHANGEME/mini.png)](https://insight.sensiolabs.com/projects/CHANGEME)
+
 [![Packagist](https://img.shields.io/packagist/v/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>.svg)](https://packagist.org/packages/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
 [![Packagist](https://poser.pugx.org/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/d/total.svg)](https://packagist.org/packages/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
 [![Packagist](https://img.shields.io/packagist/l/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>.svg)](https://packagist.org/packages/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
