@@ -3,6 +3,7 @@ Laravel package generator
 
 [![Build Status](https://travis-ci.org/melihovv/laravel-package-generator.svg?branch=master)](https://travis-ci.org/melihovv/laravel-package-generator)
 [![styleci](https://styleci.io/repos/96041272/shield)](https://styleci.io/repos/96041272)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/91239e6a-d51b-495c-9dc7-90d2ac8805f3/mini.png)](https://insight.sensiolabs.com/projects/91239e6a-d51b-495c-9dc7-90d2ac8805f3)
 [![Packagist](https://img.shields.io/packagist/v/melihovv/laravel-package-generator.svg)](https://packagist.org/packages/melihovv/laravel-package-generator)
 [![Packagist](https://poser.pugx.org/melihovv/laravel-package-generator/d/total.svg)](https://packagist.org/packages/melihovv/laravel-package-generator)
 [![Packagist](https://img.shields.io/packagist/l/melihovv/laravel-package-generator.svg)](https://packagist.org/packages/melihovv/laravel-package-generator)
