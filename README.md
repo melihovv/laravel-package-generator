@@ -119,6 +119,10 @@ Available variables to use in templates:
   * Package description
   * Usage section
 
+## Security
+
+If you discover any security related issues, please email amelihovv@ya.ru instead of using the issue tracker.
+
 ## Credits
 
 - [Alexander Melihov](https://github.com/melihovv)
