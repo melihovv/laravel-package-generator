@@ -17,7 +17,7 @@
   },
   "require-dev": {
     "orchestra/testbench": "~3.5.0",
-    "phpunit/phpunit": "^5.7"
+    "phpunit/phpunit": "~6.0"
   },
   "autoload": {
     "psr-4": {
