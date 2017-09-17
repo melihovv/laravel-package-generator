@@ -42,7 +42,7 @@ Example: `php artisan package:new Melihovv SomeAwesomePackage`
 This command will:
 
 * Create `packages/melihovv/some-awesome-package` folder
-* Register package auto loading in app composer.json
+* Register package in app composer.json
 * Copy package skeleton from skeleton folder to created folder (you can provide
 your custom skeleton path in config)
 * Run `composer dump-autoload`
@@ -63,7 +63,7 @@ Example: `php artisan package:remove Melihovv SomeAwesomePackage`
 This command will:
 
 * Remove `packages/melihovv/some-awesome-package` folder
-* Unregister package auto loading in app composer.json
+* Unregister package in app composer.json
 * Run `composer dump-autoload`
 
 Interactive mode also possible.

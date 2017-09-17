@@ -64,7 +64,7 @@ class PackageClone extends Command
 
         try {
             $this->cloneRepo($url, $packagePath, $this->option('branch'));
-            $this->registerPackageAutoLoading(
+            $this->registerPackage(
                 $vendor, $package, "$relPackagePath/$packageSourceFolder"
             );
             $this->composerDumpAutoload();

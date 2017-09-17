@@ -9,7 +9,7 @@ use Melihovv\LaravelPackageGenerator\Exceptions\RuntimeException;
 trait ChangesComposerJson
 {
     /**
-     * Register package auto loading in composer.json.
+     * Register package in composer.json.
      *
      * @param $vendor
      * @param $package
@@ -17,9 +17,9 @@ trait ChangesComposerJson
      *
      * @throws RuntimeException
      */
-    protected function registerPackageAutoLoading($vendor, $package, $relPackagePath)
+    protected function registerPackage($vendor, $package, $relPackagePath)
     {
-        $this->info('Configure package auto loading in composer.json.');
+        $this->info('Register package in composer.json.');
 
         $composerJson = $this->loadComposerJson();
 
@@ -45,7 +45,7 @@ trait ChangesComposerJson
     }
 
     /**
-     * Remove package from composer.json autoloading.
+     * Unregister package from composer.json.
      *
      * @param $vendor
      * @param $package
@@ -53,9 +53,9 @@ trait ChangesComposerJson
      * @throws FileNotFoundException
      * @throws RuntimeException
      */
-    protected function removePackageFromComposerJson($vendor, $package)
+    protected function unregisterPackage($vendor, $package)
     {
-        $this->info('Remove package from composer.json.');
+        $this->info('Unregister package from composer.json.');
 
         $composerJson = $this->loadComposerJson();
 
@@ -92,9 +92,7 @@ trait ChangesComposerJson
         $composerJson = json_decode($composerJsonContent, true);
 
         if (! is_array($composerJson)) {
-            throw new RuntimeException(
-                "Invalid composer.json file [$composerJsonPath]"
-            );
+            throw new RuntimeException("Invalid composer.json file [$composerJsonPath]");
         }
 
         return $composerJson;
@@ -114,9 +112,7 @@ trait ChangesComposerJson
 
         $composerJsonPath = $this->getComposerJsonPath();
         if (File::put($composerJsonPath, $newComposerJson) === false) {
-            throw new RuntimeException(
-                "Cannot write to composer.json [$composerJsonPath]"
-            );
+            throw new RuntimeException("Cannot write to composer.json [$composerJsonPath]");
         }
     }
 

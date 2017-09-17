@@ -51,7 +51,7 @@ class PackageNew extends Command
 
         try {
             $this->createPackageFolder($packagePath);
-            $this->registerPackageAutoLoading($vendor, $package, "$relPackagePath/src");
+            $this->registerPackage($vendor, $package, "$relPackagePath/src");
             $this->copySkeleton($packagePath, $vendor, $package, $vendorFolderName, $packageFolderName);
             $this->composerDumpAutoload();
 
