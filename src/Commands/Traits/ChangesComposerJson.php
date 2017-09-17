@@ -33,7 +33,7 @@ trait ChangesComposerJson
         if (count($filtered) === 0) {
             $this->info('Register composer repository for package.');
 
-            $composerJson['repositories'][] = (object)[
+            $composerJson['repositories'][] = (object) [
                 'type' => 'path',
                 'url' => $relPackagePath,
             ];
