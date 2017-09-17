@@ -51,8 +51,9 @@ class PackageNew extends Command
 
         try {
             $this->createPackageFolder($packagePath);
-            $this->registerPackage($vendor, $package, "$relPackagePath/src");
+            $this->registerPackage($vendorFolderName, $packageFolderName, $relPackagePath);
             $this->copySkeleton($packagePath, $vendor, $package, $vendorFolderName, $packageFolderName);
+            $this->composerUpdatePackage($vendorFolderName, $packageFolderName);
             $this->composerDumpAutoload();
 
             $this->info('Finished. Are you ready to write awesome package?');

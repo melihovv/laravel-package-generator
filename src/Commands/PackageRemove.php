@@ -50,8 +50,9 @@ class PackageRemove extends Command
         $packagePath = base_path($relPackagePath);
 
         try {
+            $this->composerRemovePackage($vendorFolderName, $packageFolderName);
             $this->removePackageFolder($packagePath);
-            $this->unregisterPackage($vendor, $package);
+            $this->unregisterPackage($vendor, $package, "packages/$vendorFolderName/$packageFolderName");
             $this->composerDumpAutoload();
         } catch (Exception $e) {
             $this->error($e->getMessage());

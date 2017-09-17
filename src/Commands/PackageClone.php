@@ -27,7 +27,6 @@ class PackageClone extends Command
                             {vendor? : The vendor part of the namespace}
                             {package? : The name of package for the namespace}
                             {--b|branch=master : The branch to clone}
-                            {--src=src : The package source folder}
                             {--i|interactive : Interactive mode}';
 
     /**
@@ -60,13 +59,10 @@ class PackageClone extends Command
         $relPackagePath = "packages/$vendorFolderName/$packageFolderName";
         $packagePath = base_path($relPackagePath);
 
-        $packageSourceFolder = $this->option('src');
-
         try {
             $this->cloneRepo($url, $packagePath, $this->option('branch'));
-            $this->registerPackage(
-                $vendor, $package, "$relPackagePath/$packageSourceFolder"
-            );
+            $this->registerPackage($vendor, $package, $relPackagePath);
+            $this->composerUpdatePackage($vendorFolderName, $packageFolderName);
             $this->composerDumpAutoload();
 
             $this->info('Finished.');

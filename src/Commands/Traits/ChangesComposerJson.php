@@ -23,25 +23,29 @@ trait ChangesComposerJson
 
         $composerJson = $this->loadComposerJson();
 
-        if (! isset($composerJson['autoload'])) {
-            $composerJson['autoload'] = [];
+        array_set($composerJson, 'repositories', []);
+
+        $filtered = array_filter($composerJson['repositories'], function ($repository) use ($relPackagePath) {
+            return $repository['type'] === 'path'
+                && $repository['url'] === $relPackagePath;
+        });
+
+        if (count($filtered) === 0) {
+            $this->info('Register composer repository for package.');
+
+            $composerJson['repositories'][] = (object)[
+                'type' => 'path',
+                'url' => $relPackagePath,
+            ];
+        } else {
+            $this->info('Composer repository for package is already registered.');
         }
 
-        if (! isset($composerJson['autoload']['psr-4'])) {
-            $composerJson['autoload']['psr-4'] = [];
-        }
-
-        if (isset($composerJson['autoload']['psr-4']["$vendor\\$package\\"])) {
-            $this->info('Package auto loading was already configured. Skipping.');
-
-            return;
-        }
-
-        $composerJson['autoload']['psr-4']["$vendor\\$package\\"] = $relPackagePath;
+        array_set($composerJson, "require.$vendor/$package", 'dev-master');
 
         $this->saveComposerJson($composerJson);
 
-        $this->info('Package auto loading was successfully configured.');
+        $this->info('Package was successfully registered in composer.json.');
     }
 
     /**
@@ -53,23 +57,28 @@ trait ChangesComposerJson
      * @throws FileNotFoundException
      * @throws RuntimeException
      */
-    protected function unregisterPackage($vendor, $package)
+    protected function unregisterPackage($vendor, $package, $relPackagePath)
     {
         $this->info('Unregister package from composer.json.');
 
         $composerJson = $this->loadComposerJson();
 
-        if (! isset($composerJson['autoload'], $composerJson['autoload']['psr-4'])) {
-            $this->info('Auto loading is not configured in composer.json. Skipping.');
+        unset($composerJson['require']["$vendor\\$package\\"]);
 
-            return;
+        $repositories = array_filter($composerJson['repositories'], function ($repository) use ($relPackagePath) {
+            return $repository['type'] !== 'path'
+                || $repository['url'] !== $relPackagePath;
+        });
+
+        $composerJson['repositories'] = $repositories;
+
+        if (count($composerJson['repositories']) === 0) {
+            unset($composerJson['repositories']);
         }
-
-        unset($composerJson['autoload']['psr-4']["$vendor\\$package\\"]);
 
         $this->saveComposerJson($composerJson);
 
-        $this->info('Package was successfully removed from composer.json.');
+        $this->info('Package was successfully unregistered from composer.json.');
     }
 
     /**
