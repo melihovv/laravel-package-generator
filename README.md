@@ -47,9 +47,9 @@ This command will:
 your custom skeleton path in config)
 * Run `composer dump-autoload`
 
-I recommend to run this command with interactive `-i` flag:
+I recommend to run this command with interactive `--i` flag:
 ```
-php artisan package:new Melihovv SomeAwesomePackage -i
+php artisan package:new Melihovv SomeAwesomePackage --i
 ```
 
 This way you will be prompted for every needed value.
