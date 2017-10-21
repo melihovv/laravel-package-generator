@@ -54,3 +54,6 @@ instead of using the issue tracker.
 
 - [<?php echo $name; ?>](<?php echo $githubPackageUrl; ?>)
 - [All contributors](<?php echo $githubPackageUrl; ?>/graphs/contributors)
+
+This package is bootstrapped with the help of
+[melihovv/laravel-package-generator](https://github.com/melihovv/laravel-package-generator).
