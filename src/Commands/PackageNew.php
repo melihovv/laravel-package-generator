@@ -7,6 +7,7 @@ use Illuminate\Console\Command;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\CopiesSkeleton;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
+use Melihovv\LaravelPackageGenerator\Commands\Traits\InteractsWithGit;
 use Melihovv\LaravelPackageGenerator\Commands\Traits\ManipulatesPackageFolder;
 
 class PackageNew extends Command
@@ -15,6 +16,7 @@ class PackageNew extends Command
     use ManipulatesPackageFolder;
     use InteractsWithComposer;
     use CopiesSkeleton;
+    use InteractsWithGit;
 
     /**
      * The name and signature of the console command.
@@ -53,6 +55,7 @@ class PackageNew extends Command
             $this->createPackageFolder($packagePath);
             $this->registerPackage($vendorFolderName, $packageFolderName, $relPackagePath);
             $this->copySkeleton($packagePath, $vendor, $package, $vendorFolderName, $packageFolderName);
+            $this->initRepo($packagePath);
             $this->composerUpdatePackage($vendorFolderName, $packageFolderName);
             $this->composerDumpAutoload();
 

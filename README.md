@@ -45,6 +45,7 @@ This command will:
 * Register package in app composer.json
 * Copy package skeleton from skeleton folder to created folder (you can provide
 your custom skeleton path in config)
+* Run `git init packages/melihovv/some-awesome-package`
 * Run `composer update melihovv/some-awesome-package`
 * Run `composer dump-autoload`
 

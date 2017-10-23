@@ -34,4 +34,25 @@ trait InteractsWithGit
 
         $this->info("\"$command\" was successfully ran.");
     }
+
+    /**
+     * Init git repo.
+     * @param string $repoPath
+     */
+    protected function initRepo($repoPath)
+    {
+        $command = "git init $repoPath";
+        $this->info("Run \"$command\".");
+
+        $output = [];
+        exec($command, $output, $returnStatusCode);
+
+        if ($returnStatusCode !== 0) {
+            throw RuntimeException::commandExecutionFailed(
+                $command, $returnStatusCode
+            );
+        }
+
+        $this->info("\"$command\" was successfully ran.");
+    }
 }
