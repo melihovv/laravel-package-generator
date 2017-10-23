@@ -45,6 +45,7 @@ This command will:
 * Register package in app composer.json
 * Copy package skeleton from skeleton folder to created folder (you can provide
 your custom skeleton path in config)
+* Run `composer update melihovv/some-awesome-package`
 * Run `composer dump-autoload`
 
 I recommend to run this command with interactive `-i` flag:
@@ -62,6 +63,7 @@ Example: `php artisan package:remove Melihovv SomeAwesomePackage`
 
 This command will:
 
+* Run `composer remove melihovv/some-awesome-package`
 * Remove `packages/melihovv/some-awesome-package` folder
 * Unregister package in app composer.json
 * Run `composer dump-autoload`
@@ -77,8 +79,8 @@ Example: `php artisan package:clone https://github.com/melihovv/laravel-env-vali
 This command will:
 
 * Clone specified repo in `packages/melihovv/laravel-env-validator` folder
-* Register package auto loading in app composer.json with this path
-`packages/melihovv/laravel-env-validator/src/LaravelEnvValidator`
+* Register package in app composer.json 
+* Run `composer update melihovv/laravel-env-validator`
 * Run `composer dump-autoload`
 
 Interactive mode also possible. If you need you can specify which branch to
