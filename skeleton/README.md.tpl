@@ -15,7 +15,7 @@ Package description: CHANGE ME
 ## Installation
 
 Install via composer
-```
+```bash
 composer require <?php echo $vendorFolderName; ?>/<?php echo "$packageFolderName\n"; ?>
 ```
 
@@ -38,7 +38,7 @@ Register package facade in `config/app.php` in `aliases` section
 
 ### Publish Configuration File
 
-```
+```bash
 php artisan vendor:publish --provider="<?php echo $vendor; ?>\<?php echo $package; ?>\ServiceProvider" --tag="config"
 ```
 
