@@ -15,7 +15,7 @@ Simple package to quickly generate basic structure for other laravel packages.
 ## Install
 
 Install via composer
-```
+```bash
 composer require --dev melihovv/laravel-package-generator
 ```
 
@@ -27,7 +27,7 @@ Melihovv\LaravelPackageGenerator\ServiceProvider::class,
 ```
 
 Publish package config if you want customize default values
-```
+```bash
 php artisan vendor:publish --provider="Melihovv\LaravelPackageGenerator\ServiceProvider" --tag="config"
 ```
 
@@ -50,7 +50,7 @@ your custom skeleton path in config)
 * Run `composer dump-autoload`
 
 I recommend to run this command with interactive `-i` flag:
-```
+```bash
 php artisan package:new Melihovv SomeAwesomePackage -i
 ```
 
