@@ -43,7 +43,7 @@ trait InteractsWithUser
      */
     protected function getVendorFolderName($vendor)
     {
-        $vendorFolderName = Str::lower($vendor);
+        $vendorFolderName = Str::kebab($vendor);
 
         return $this->askUser('The vendor folder name?', $vendorFolderName);
     }
