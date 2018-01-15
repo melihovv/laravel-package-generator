@@ -16,7 +16,7 @@ Simple package to quickly generate basic structure for other laravel packages.
 
 Install via composer
 ```bash
-composer require --dev melihovv/laravel-package-generator
+composer require --dev --prefer-source melihovv/laravel-package-generator
 ```
 
 Add service provider to `config/app.php` in `providers` section (it is optional
