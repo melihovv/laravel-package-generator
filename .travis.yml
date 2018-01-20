@@ -28,6 +28,7 @@ matrix:
 
 before_install:
   - travis_retry composer self-update --stable -n
+  - composer validate --no-check-all --strict
   - composer require "laravel/framework:${LARAVEL_VERSION}" --no-update -n
 
 install:
