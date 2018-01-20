@@ -5,6 +5,7 @@
   "keywords": [
     <?php echo "$composerKeywords\n"; ?>
   ],
+  "type": "library",
   "authors": [
     {
       "name": "<?php echo $name; ?>",
