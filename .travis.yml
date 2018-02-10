@@ -6,32 +6,24 @@ notifications:
     email:
         on_success: never
         on_failure: always
-        
-matrix:
-  include:
-    - php: 5.6
-      env: LARAVEL_VERSION=5.3.*
-    - php: 5.6
-      env: LARAVEL_VERSION=5.4.*
-    - php: 7.0
-      env: LARAVEL_VERSION=5.3.*
-    - php: 7.0
-      env: LARAVEL_VERSION=5.4.*
-    - php: 7.0
-      env: LARAVEL_VERSION=5.5.*
-    - php: 7.1
-      env: LARAVEL_VERSION=5.3.*
-    - php: 7.1
-      env: LARAVEL_VERSION=5.4.*
-    - php: 7.1
-      env: LARAVEL_VERSION=5.5.*
+
+php:
+   - 5.6
+   - 7.0
+   - 7.1
+   - 7.2
+
+env:
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+    - COMPOSER_FLAGS=""
 
 before_install:
   - travis_retry composer self-update --stable -n
   - composer validate --no-check-all --strict
-  - composer require "laravel/framework:${LARAVEL_VERSION}" --no-update -n
 
 install:
+  - travis_retry composer update --prefer-source $COMPOSER_FLAGS
   - travis_retry composer install --no-suggest --prefer-dist -n -o
 
 script:
