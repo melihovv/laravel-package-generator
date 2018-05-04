@@ -22,6 +22,6 @@ class <?php echo $package; ?>Test extends TestCase
 
     public function testExample()
     {
-        assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 }
