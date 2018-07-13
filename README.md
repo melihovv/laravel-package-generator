@@ -33,7 +33,7 @@ php artisan vendor:publish --provider="Melihovv\LaravelPackageGenerator\ServiceP
 
 ## Available commands
 
-### php artisan package:new vendor package
+### php artisan package:new -i {vendor} {package}
 
 Create new package.
 
@@ -49,14 +49,9 @@ your custom skeleton path in config)
 * Run `composer update melihovv/some-awesome-package`
 * Run `composer dump-autoload`
 
-I recommend to run this command with interactive `-i` flag:
-```bash
-php artisan package:new Melihovv SomeAwesomePackage -i
-```
+With interactive `-i` flag you will be prompted for every needed value from you.
 
-This way you will be prompted for every needed value.
-
-### php artisan package:remove
+### php artisan package:remove {vendor} {package}
 
 Remove the existing package.
 
