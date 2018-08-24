@@ -22,7 +22,7 @@ trait ChangesComposerJson
         $this->info('Register package in composer.json.');
 
         $composerJson = $this->loadComposerJson();
-        
+
         if (! isset($composerJson['repositories'])) {
             array_set($composerJson, 'repositories', []);
         }
