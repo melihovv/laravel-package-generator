@@ -24,11 +24,10 @@ trait ChangesComposerJson
         $composerJson = $this->loadComposerJson();
         //array_set($composerJson, 'repositories', []);
         // if exists -> append
-        if( ! isset( $composerJson['repositories'] ) )
-        {
+        if (! isset($composerJson['repositories'])) {
             array_set($composerJson, 'repositories', []);
         }
-        
+
         $filtered = array_filter($composerJson['repositories'], function ($repository) use ($relPackagePath) {
             return $repository['type'] === 'path'
                 && $repository['url'] === $relPackagePath;
