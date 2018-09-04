@@ -14,11 +14,11 @@
   ],
   "require": {
     "php": "<?php echo $phpVersion; ?>",
-    "illuminate/support": "~5.6.0"
+    "illuminate/support": "~5.7.0"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.6.0",
-    "phpunit/phpunit": "~7.0"
+    "orchestra/testbench": "~3.7.0",
+    "phpunit/phpunit": "^7.0"
   },
   "autoload": {
     "psr-4": {
