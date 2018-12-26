@@ -108,7 +108,7 @@ Available variables to use in templates:
 * email (e.g. amelihovv@ya.ru)
 * githubPackageUrl (e.g. https://github.com/melihov/some-awesome-package)
 
-## Things you need to to manually:
+## Things you need to do manually:
 
 * Service provider and alias registration (if you use laravel <5.5)
 * In README.md:
