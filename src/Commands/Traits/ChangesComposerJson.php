@@ -2,6 +2,7 @@
 
 namespace Melihovv\LaravelPackageGenerator\Commands\Traits;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Melihovv\LaravelPackageGenerator\Exceptions\RuntimeException;
@@ -24,7 +25,7 @@ trait ChangesComposerJson
         $composerJson = $this->loadComposerJson();
 
         if (! isset($composerJson['repositories'])) {
-            array_set($composerJson, 'repositories', []);
+            Arr::set($composerJson, 'repositories', []);
         }
 
         $filtered = array_filter($composerJson['repositories'], function ($repository) use ($relPackagePath) {
@@ -43,7 +44,7 @@ trait ChangesComposerJson
             $this->info('Composer repository for package is already registered.');
         }
 
-        array_set($composerJson, "require.$vendor/$package", 'dev-master');
+        Arr::set($composerJson, "require.$vendor/$package", 'dev-master');
 
         $this->saveComposerJson($composerJson);
 
