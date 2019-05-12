@@ -14,10 +14,10 @@
   ],
   "require": {
     "php": "<?php echo $phpVersion; ?>",
-    "illuminate/support": "~5.7.0"
+    "illuminate/support": "~5.8.0"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.7.0",
+    "orchestra/testbench": "~3.8.0",
     "phpunit/phpunit": "^7.0"
   },
   "autoload": {
