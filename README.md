@@ -57,22 +57,6 @@ This command will:
 
 Interactive mode also possible.
 
-### php artisan package:clone
-
-Clone the existing package.
-
-Example: `php artisan package:clone https://github.com/melihovv/laravel-env-validator Melihovv LaravelEnvValidator --src=src/LaravelEnvValidator`
-
-This command will:
-
-* Clone specified repo in `packages/melihovv/laravel-env-validator` folder
-* Register package in app composer.json
-* Run `composer update melihovv/laravel-env-validator`
-* Run `composer dump-autoload`
-
-Interactive mode also possible. If you need you can specify which branch to
-clone with `-b` flag.
-
 ## Custom skeleton
 
 This package will copy all folders and files from specified skeleton path to

@@ -3,7 +3,6 @@
 namespace Melihovv\LaravelPackageGenerator;
 
 use Melihovv\LaravelPackageGenerator\Commands\PackageNew;
-use Melihovv\LaravelPackageGenerator\Commands\PackageClone;
 use Melihovv\LaravelPackageGenerator\Commands\PackageRemove;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -20,7 +19,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             $this->commands([
                 PackageNew::class,
                 PackageRemove::class,
-                PackageClone::class,
             ]);
         }
     }
