@@ -175,7 +175,7 @@ trait CopiesSkeleton
             'composerDesc' => $composerDescription,
             'composerKeywords' => $composerKeywords,
             'license' => $this->askUser('The package licence?', 'MIT'),
-            'phpVersion' => $this->askUser('Php version constraint?', '>=7.0'),
+            'phpVersion' => $this->askUser('Php version constraint?', '>=7.2'),
 
             'aliasName' => $packageFolderName,
             'configFileName' => $packageFolderName,

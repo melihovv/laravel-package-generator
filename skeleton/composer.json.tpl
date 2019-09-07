@@ -14,11 +14,11 @@
   ],
   "require": {
     "php": "<?php echo $phpVersion; ?>",
-    "illuminate/support": "~5.8.0"
+    "illuminate/support": "^6.0"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.8.0",
-    "phpunit/phpunit": "^7.0"
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^8.0"
   },
   "autoload": {
     "psr-4": {
@@ -28,10 +28,7 @@
   "autoload-dev": {
     "psr-4": {
       "<?php echo $vendor; ?>\\<?php echo $package; ?>\\Tests\\": "tests"
-    },
-    "files": [
-      "vendor/phpunit/phpunit/src/Framework/Assert/Functions.php"
-    ]
+    }
   },
   "scripts": {
     "phpunit": "phpunit"

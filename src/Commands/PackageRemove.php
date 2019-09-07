@@ -54,6 +54,8 @@ class PackageRemove extends Command
             $this->removePackageFolder($packagePath);
             $this->unregisterPackage($vendor, $package, "packages/$vendorFolderName/$packageFolderName");
             $this->composerDumpAutoload();
+
+            return 0;
         } catch (Exception $e) {
             $this->error($e->getMessage());
 

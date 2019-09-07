@@ -60,12 +60,12 @@ class PackageNew extends Command
             $this->composerDumpAutoload();
 
             $this->info('Finished. Are you ready to write awesome package?');
+
+            return 0;
         } catch (Exception $e) {
             $this->error($e->getMessage());
 
             return -1;
         }
-
-        return 0;
     }
 }

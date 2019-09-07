@@ -66,13 +66,13 @@ class PackageClone extends Command
             $this->composerDumpAutoload();
 
             $this->info('Finished.');
+
+            return 0;
         } catch (Exception $e) {
             $this->error($e->getMessage());
 
             return -1;
         }
-
-        return 0;
     }
 
     /**

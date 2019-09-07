@@ -3,8 +3,6 @@ Laravel package generator
 
 [![Build Status](https://travis-ci.org/melihovv/laravel-package-generator.svg?branch=master)](https://travis-ci.org/melihovv/laravel-package-generator)
 [![styleci](https://styleci.io/repos/96041272/shield)](https://styleci.io/repos/96041272)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/91239e6a-d51b-495c-9dc7-90d2ac8805f3/mini.png)](https://insight.sensiolabs.com/projects/91239e6a-d51b-495c-9dc7-90d2ac8805f3)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/melihovv/laravel-package-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/melihovv/laravel-package-generator/?branch=master)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/laravel-package-generator.svg)](https://packagist.org/packages/melihovv/laravel-package-generator)
 [![Packagist](https://poser.pugx.org/melihovv/laravel-package-generator/d/total.svg)](https://packagist.org/packages/melihovv/laravel-package-generator)
@@ -17,13 +15,6 @@ Simple package to quickly generate basic structure for other laravel packages.
 Install via composer
 ```bash
 composer require --dev melihovv/laravel-package-generator
-```
-
-Add service provider to `config/app.php` in `providers` section (it is optional
-step if you use laravel>=5.5 with package auto discovery feature)
-
-```php
-Melihovv\LaravelPackageGenerator\ServiceProvider::class,
 ```
 
 Publish package config if you want customize default values
@@ -113,7 +104,6 @@ Available variables to use in templates:
 * Service provider and alias registration (if you use laravel <5.5)
 * In README.md:
   * StyleCI repository identifier
-  * Sensio Insight repository identifier
   * Package description
   * Usage section
 
