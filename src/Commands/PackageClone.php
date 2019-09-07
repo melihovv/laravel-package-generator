@@ -46,7 +46,7 @@ class PackageClone extends Command
         $url = $this->argument('url');
 
         try {
-            list($vendorFolderName, $packageFolderName) = $this->getVendorAndFolderName($url);
+            [$vendorFolderName, $packageFolderName] = $this->getVendorAndFolderName($url);
         } catch (Exception $e) {
             $this->error($e->getMessage());
 
