@@ -27,6 +27,7 @@ matrix:
 
 before_install:
   - composer config discard-changes true
+  - composer validate --no-check-all --strict
   - travis_retry composer self-update
   - travis_retry composer require "laravel/framework:${LARAVEL}" "orchestra/testbench:${TESTBENCH}" --no-interaction --no-update
 
