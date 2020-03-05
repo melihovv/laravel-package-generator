@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "<?php echo $phpVersion; ?>",
-    "illuminate/support": "^6.0"
+    "illuminate/support": "^6.0|^7.0"
   },
   "require-dev": {
     "orchestra/testbench": "^4.0",
