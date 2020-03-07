@@ -200,7 +200,7 @@ trait CopiesSkeleton
      */
     protected function getPathFromConfig($configName, $default)
     {
-        $path = config("laravel-package-generator.$configName");
+        $path = config("package-generator.$configName");
 
         if (empty($path)) {
             $path = $default;
