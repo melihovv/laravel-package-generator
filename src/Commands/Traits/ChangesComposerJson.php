@@ -2,9 +2,9 @@
 
 namespace Melihovv\LaravelPackageGenerator\Commands\Traits;
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Melihovv\LaravelPackageGenerator\Exceptions\RuntimeException;
 
 trait ChangesComposerJson
