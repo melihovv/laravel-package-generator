@@ -1,7 +1,7 @@
 Laravel package generator
 =========================
 
-[![Build Status](https://travis-ci.org/melihovv/laravel-package-generator.svg?branch=master)](https://travis-ci.org/melihovv/laravel-package-generator)
+[![GitHub Workflow Status](https://github.com/melihovv/laravel-package-generator/workflows/Run%20tests/badge.svg)](https://github.com/melihovv/laravel-package-generator/actions)
 [![styleci](https://styleci.io/repos/96041272/shield)](https://styleci.io/repos/96041272)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/laravel-package-generator.svg)](https://packagist.org/packages/melihovv/laravel-package-generator)

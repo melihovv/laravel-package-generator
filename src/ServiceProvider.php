@@ -7,12 +7,12 @@ use Melihovv\LaravelPackageGenerator\Commands\PackageRemove;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    const CONFIG_PATH = __DIR__.'/../config/laravel-package-generator.php';
+    const CONFIG_PATH = __DIR__.'/../config/package-generator.php';
 
     public function boot()
     {
         $this->publishes([
-            self::CONFIG_PATH => config_path('laravel-package-generator.php'),
+            self::CONFIG_PATH => config_path('package-generator.php'),
         ], 'config');
 
         if ($this->app->runningInConsole()) {
@@ -27,7 +27,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->mergeConfigFrom(
             self::CONFIG_PATH,
-            'laravel-package-generator'
+            'package-generator'
         );
     }
 }

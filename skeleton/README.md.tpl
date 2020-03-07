@@ -1,8 +1,7 @@
 # <?php echo "$packageHumanName\n"; ?>
 
-[![Build Status](https://travis-ci.org/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>.svg?branch=master)](https://travis-ci.org/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
+[![GitHub Workflow Status](https://github.com/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/workflows/Run%20tests/badge.svg)](https://github.com/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/actions)
 [![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
-[![Coverage Status](https://coveralls.io/repos/github/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/badge.svg?branch=master)](https://coveralls.io/github/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>?branch=master)
 
 [![Packagist](https://img.shields.io/packagist/v/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>.svg)](https://packagist.org/packages/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
 [![Packagist](https://poser.pugx.org/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>/d/total.svg)](https://packagist.org/packages/<?php echo $vendorFolderName; ?>/<?php echo $packageFolderName; ?>)
@@ -17,10 +16,10 @@ Install via composer
 composer require <?php echo $vendorFolderName; ?>/<?php echo "$packageFolderName\n"; ?>
 ```
 
-### Publish Configuration File
+### Publish package assets
 
 ```bash
-php artisan vendor:publish --provider="<?php echo $vendor; ?>\<?php echo $package; ?>\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="<?php echo $vendor; ?>\<?php echo $package; ?>\ServiceProvider"
 ```
 
 ## Usage
