@@ -3,8 +3,8 @@
 namespace Melihovv\LaravelPackageGenerator\Commands\Traits;
 
 use Exception;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Illuminate\View\Engines\PhpEngine;
 use Melihovv\LaravelPackageGenerator\Exceptions\RuntimeException;
 
