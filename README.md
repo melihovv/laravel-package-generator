@@ -85,7 +85,6 @@ Available variables to use in templates:
 
 ## Things you need to do manually:
 
-* Service provider and alias registration (if you use laravel <5.5)
 * In README.md:
   * StyleCI repository identifier
   * Package description
